@@ -32,4 +32,30 @@ const jets = [
   { name: "Super Etendard", type: "Attack", weapons: ["Exocet missile", "Mk 82 bombs"], description: "French carrier strike jet." },
 
   // **51–60 will continue below**
+  { name: "CM.170", type: "Trainer/Attack", weapons: ["20mm cannon", "Light rockets"], description: "French light jet trainer/attack." },
+  { name: "Dassault Mirage 3", type: "Fighter", weapons: ["R550 Magic", "DEFA 30mm cannon"], description: "French delta‑wing fighter." },
+  { name: "Dassault Mirage 5/50", type: "Fighter", weapons: ["Magic missiles", "DEFA 30mm"], description: "Advanced Mirage 3 attack variant." },
+  { name: "CF105", type: "Fighter", weapons: ["AIR‑2 Genie", "AIM‑4 Falcon"], description: "Canadian delta‑wing interceptor (Avro Arrow)." },
+  { name: "Dassault Mirage F1", type: "Fighter", weapons: ["Magic missiles", "DEFA 30mm"], description: "French multirole fighter." },
+  { name: "Dassault Mirage 2000", type: "Fighter", weapons: ["MICA missiles", "DEFA 30mm"], description: "French high‑performance fighter." },
+  { name: "British Harrier Series", type: "Fighter/Attack", weapons: ["Sidewinder", "Rockeye II bombs", "30mm ADEN cannon"], description: "VTOL/Harrier jump jets." },
+  { name: "IAI Kfir", type: "Fighter", weapons: ["Python 4/5", "Shafrir missiles", "M61 Vulcan"], description: "Israeli multirole fighter." },
+  { name: "P80", type: "Fighter", weapons: [".50 cal machine guns"], description: "Early US jet fighter." },
+  { name: "F86", type: "Fighter", weapons: [".50 cal machine guns", "HVAR rockets"], description: "Korean War US jet fighter." },
+  { name: "Pavana Tornado", type: "Fighter/Bomber", weapons: ["Tornado missiles", "Paveway bombs"], description: "Strike fighter (Italy)." },
+  { name: "F84", type: "Fighter/Bomber", weapons: [".50 cal machine guns", "Bombs"], description: "Early US jet fighter/bomber." },
+  { name: "Jaguar", type: "Attack", weapons: ["Jaguar missiles", "30mm cannon"], description: "Ground‑attack jet." },
+  { name: "P59B", type: "Fighter", weapons: [".50 cal machine guns"], description: "One of the first US jet fighters." },
+  { name: "Su24", type: "Attack", weapons: ["Kh‑25", "Kh‑29 missiles", "S‑24 rockets"], description: "Soviet strike aircraft." },
+  { name: "Su25", type: "Attack", weapons: ["GSh‑30‑2 30mm cannon", "Kh‑25 missiles", "S‑8 rockets"], description: "Russian close air support jet." },
+  { name: "S.2B", type: "Trainer/Patrol", weapons: ["20mm cannon"], description: "Carrier trainer/patrol aircraft." },
+  { name: "F102", type: "Fighter", weapons: ["AIM‑4 Falcon", "AIM‑26 Falcon"], description: "US delta‑wing interceptor." },
+  { name: "F106", type: "Fighter", weapons: ["AIM‑4 Falcon", "AIM‑26 Falcon"], description: "Advanced US interceptor." },
+  { name: "F94", type: "Fighter", weapons: ["AIM‑4 Falcon"], description: "Early jet interceptor." },
+  { name: "F5 Tiger", type: "Fighter", weapons: ["AIM‑9 Sidewinder", "M39 cannon"], description: "US lightweight fighter." },
+  { name: "F104", type: "Fighter", weapons: ["AIM‑9 Sidewinder", "M61 Vulcan"], description: "US supersonic fighter." },
+  { name: "MiG21", type: "Fighter", weapons: ["R‑3S", "GSh‑23 cannon"], description: "Soviet supersonic fighter." },
+  { name: "MiG25", type: "Fighter", weapons: ["R‑40 missiles", "GSh‑6‑23 cannon"], description: "Soviet interceptor/fighter." },
+
+  // **100–110 next**
 
