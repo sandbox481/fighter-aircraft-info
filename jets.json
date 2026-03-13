@@ -730,5 +730,21 @@
     "physical_description": "Upgraded Kfir variants with better avionics, engines, and multirole capability.",
     "purpose_features": "Export and improved operational versions for Israel; capable in strike and interception roles.",
     "weapons": ["Gun","Missiles","Bombs"]
+  }[
+  {
+    "name": "Ching Kuo IDF",
+    "country": "Taiwan",
+    "length": "14.0 m",
+    "width": "9.0 m",
+    "height": "4.5 m",
+    "weight": "6,100 kg (empty approx.)",
+    "speed": "Mach 1.8",
+    "developer": "AIDC (Aerospace Industrial Development Corporation)",
+    "number_produced": 130,
+    "first_flight": "1989‑05‑28",
+    "physical_description": "Single-engine, lightweight multirole fighter with delta-influenced wing and modern avionics.",
+    "purpose_features": "Air superiority and ground attack for Taiwan’s air defense; designed for high maneuverability and short-field operations.",
+    "weapons": ["Gun","Missiles","Bombs"]
   }
+]
 ]
