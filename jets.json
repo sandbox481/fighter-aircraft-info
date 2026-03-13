@@ -499,3 +499,65 @@
     "weapons": ["Missiles","Gun","Bombs"]
   }
 ]
+[
+  {
+    "name": "BAE Hawk 200",
+    "country": "United Kingdom",
+    "length": "11.99 m",
+    "width": "9.39 m",
+    "height": "3.98 m",
+    "weight": "5,000 kg (empty)",
+    "speed": "1,028 km/h",
+    "developer": "British Aerospace",
+    "number_produced": 120,
+    "first_flight": "1986‑08‑24",
+    "physical_description": "Single‑engine lightweight jet with sleek fuselage and small wings, designed for agility.",
+    "purpose_features": "Advanced trainer and light attack aircraft; exported to several countries for combat and training.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "Harrier GR.1 / GR.3",
+    "country": "United Kingdom",
+    "length": "14.0 m",
+    "width": "9.25 m",
+    "height": "3.86 m",
+    "weight": "5,070 kg (empty approx.)",
+    "speed": "1,061 km/h",
+    "developer": "Hawker Siddeley / BAE Systems",
+    "number_produced": 300,
+    "first_flight": "1967‑08‑31",
+    "physical_description": "V/STOL aircraft with vectored‑thrust nozzles and compact fuselage for vertical operations.",
+    "purpose_features": "Ground‑attack, close air support, and carrier operations; iconic for Falklands War.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "Harrier GR.5 / GR.7 / GR.9",
+    "country": "United Kingdom",
+    "length": "14.3 m",
+    "width": "9.3 m",
+    "height": "3.7 m",
+    "weight": "6,000 kg (empty approx.)",
+    "speed": "1,065 km/h",
+    "developer": "BAE Systems",
+    "number_produced": 120,
+    "first_flight": "1985‑12‑01",
+    "physical_description": "Upgraded V/STOL attack aircraft with modern avionics and improved engine thrust.",
+    "purpose_features": "Continued Harrier operations with better precision strike and reconnaissance capabilities.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "SEPECAT Jaguar",
+    "country": "United Kingdom",
+    "length": "16.36 m",
+    "width": "8.94 m",
+    "height": "4.78 m",
+    "weight": "7,400 kg (empty)",
+    "speed": "1,960 km/h",
+    "developer": "SEPECAT (UK/France)",
+    "number_produced": 531,
+    "first_flight": "1968‑09‑08",
+    "physical_description": "Twin‑seat, twin‑engine strike aircraft with swept wings and robust fuselage.",
+    "purpose_features": "Ground‑attack, reconnaissance, and nuclear strike roles; operated by RAF and export customers.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  }
+]
