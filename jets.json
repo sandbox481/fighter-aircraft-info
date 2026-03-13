@@ -422,3 +422,80 @@
     "weapons": ["Missiles","Gun","Bombs"]
   }
 ]
+[
+  {
+    "name": "Chengdu J‑20",
+    "country": "China",
+    "length": "20.3 m",
+    "width": "12.9 m",
+    "height": "4.45 m",
+    "weight": "17,000 kg (empty approx.)",
+    "speed": "Mach 2+",
+    "developer": "Chengdu Aircraft Industry Group",
+    "number_produced": 200,
+    "first_flight": "2011‑01‑11",
+    "physical_description": "Stealth twin‑engine 5th‑gen fighter with chinesed foreplanes and internal bays.",
+    "purpose_features": "Air superiority & strike; China’s first operational 5th‑gen aircraft with low observables.",
+    "weapons": ["Missiles","Gun","Bombs"]
+  },
+  {
+    "name": "Chengdu J‑10",
+    "country": "China",
+    "length": "15.5 m",
+    "width": "9.75 m",
+    "height": "4.78 m",
+    "weight": "8,500 kg (empty approx.)",
+    "speed": "Mach 2.2",
+    "developer": "Chengdu Aircraft Industry Group",
+    "number_produced": 550,
+    "first_flight": "1998‑03‑23",
+    "physical_description": "Single‑engine lightweight multirole fighter with cropped delta wing and strake.",
+    "purpose_features": "Primary Chinese multirole fighter; versatile air‑to‑air and ground attack capability.",
+    "weapons": ["Missiles","Gun","Bombs"]
+  },
+  {
+    "name": "Shenyang J‑11",
+    "country": "China",
+    "length": "21.9 m",
+    "width": "14.7 m",
+    "height": "5.93 m",
+    "weight": "17,000 kg (empty approx.)",
+    "speed": "Mach 2.35",
+    "developer": "Shenyang Aircraft Corporation",
+    "number_produced": 200,
+    "first_flight": "1998‑08‑05",
+    "physical_description": "Twin‑engine air superiority fighter based on Su‑27 design with Chinese avionics.",
+    "purpose_features": "Heavy fighter for air dominance; evolved into modern derivatives with better systems.",
+    "weapons": ["Missiles","Gun","Bombs"]
+  },
+  {
+    "name": "Shenyang J‑15",
+    "country": "China",
+    "length": "21.9 m",
+    "width": "14.7 m",
+    "height": "6.1 m",
+    "weight": "18,000 kg (empty approx.)",
+    "speed": "Mach 2.4",
+    "developer": "Shenyang Aircraft Corporation",
+    "number_produced": 100,
+    "first_flight": "2009‑08‑06",
+    "physical_description": "Carrier‑based twin‑engine fighter with foldable wings and canards.",
+    "purpose_features": "China’s carrier fighter; combines heavy payload with naval operations capability.",
+    "weapons": ["Missiles","Gun","Bombs"]
+  },
+  {
+    "name": "Chengdu J‑16",
+    "country": "China",
+    "length": "21.9 m",
+    "width": "14.5 m",
+    "height": "6.0 m",
+    "weight": "18,500 kg (empty approx.)",
+    "speed": "Mach 2+",
+    "developer": "Chengdu Aircraft Industry Group",
+    "number_produced": 120,
+    "first_flight": "2011‑06‑05",
+    "physical_description": "Two‑seat multirole strike fighter derived from J‑11 with advanced avionics.",
+    "purpose_features": "Strike/air superiority with modern sensors and weapons; key PLA‑AF tactical asset.",
+    "weapons": ["Missiles","Gun","Bombs"]
+  }
+]
