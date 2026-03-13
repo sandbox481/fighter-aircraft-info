@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jet Info</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="backBtn">← Back to Search</button>
+  <div id="jetInfo"></div>
 
+  <script src="database.js"></script>
+  <script>
+    const jetInfoDiv = document.getElementById("jetInfo");
+    const backBtn = document.getElementById("backBtn");
+
+    // Get jet name from URL query ?jet=F16
+    const params = new URLSearchParams(window.location.search);
+    const jetName = params.get("jet");
+
+    const jet = jets.find(j => j.name.toLowerCase() === jetName.toLowerCase());
+
+    if (jet) {
+      jetInfoDiv.innerHTML = `
+        <h1>${jet.name}</h1>
+        <p><strong>Type:</strong> ${jet.type}</p>
+        <p><strong>Weapons:</strong> ${jet.weapons.join(", ")}</p>
+        <p>${jet.description}</p>
+      `;
+    } else {
+      jetInfoDiv.innerHTML = "<p>Jet not found.</p>";
+    }
+
+    backBtn.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
