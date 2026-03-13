@@ -561,3 +561,95 @@
     "weapons": ["Gun","Missiles","Bombs"]
   }
 ]
+[
+  {
+    "name": "Dassault Mirage III",
+    "country": "France",
+    "length": "15.03 m",
+    "width": "8.22 m",
+    "height": "4.50 m",
+    "weight": "7,150 kg (empty)",
+    "speed": "2,335 km/h",
+    "developer": "Dassault Aviation",
+    "number_produced": 1_423,
+    "first_flight": "1956‑11‑17",
+    "physical_description": "Delta wing, single‑engine fighter with sleek fuselage and pointed nose.",
+    "purpose_features": "Interceptor and multirole fighter; widely exported, iconic in Cold War era.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "Dassault Mirage 5/50",
+    "country": "France",
+    "length": "15.03 m",
+    "width": "8.22 m",
+    "height": "4.50 m",
+    "weight": "7,150 kg (empty)",
+    "speed": "2,335 km/h",
+    "developer": "Dassault Aviation",
+    "number_produced": 500,
+    "first_flight": "1967‑05‑05",
+    "physical_description": "Delta wing fighter-bomber, derived from Mirage III, optimized for ground attack.",
+    "purpose_features": "Ground-attack variant; exported widely to Middle East and Latin America.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "Dassault Mirage F1",
+    "country": "France",
+    "length": "15.33 m",
+    "width": "8.43 m",
+    "height": "4.78 m",
+    "weight": "8,150 kg (empty)",
+    "speed": "2,222 km/h",
+    "developer": "Dassault Aviation",
+    "number_produced": 721,
+    "first_flight": "1966‑12‑23",
+    "physical_description": "High-mounted swept wing, single-engine, conventional tail design.",
+    "purpose_features": "Multirole fighter; served as interceptor and tactical ground attack aircraft.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "Dassault Mirage 2000",
+    "country": "France",
+    "length": "14.36 m",
+    "width": "9.13 m",
+    "height": "5.20 m",
+    "weight": "7,400 kg (empty)",
+    "speed": "2,336 km/h",
+    "developer": "Dassault Aviation",
+    "number_produced": 600,
+    "first_flight": "1978‑03‑10",
+    "physical_description": "Single-engine delta wing fighter with modern avionics and refined aerodynamics.",
+    "purpose_features": "Air superiority and multirole fighter; upgraded over time with advanced missiles and electronics.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "Super Étendard",
+    "country": "France",
+    "length": "14.32 m",
+    "width": "9.00 m",
+    "height": "4.68 m",
+    "weight": "5,800 kg (empty)",
+    "speed": "1,050 km/h",
+    "developer": "Dassault Aviation / Breguet",
+    "number_produced": 71,
+    "first_flight": "1974‑10‑28",
+    "physical_description": "Carrier-capable single-engine attack aircraft with swept wings and low fuselage.",
+    "purpose_features": "Naval strike aircraft; famous for Exocet missile attacks in Falklands War.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "AMX International AMX",
+    "country": "France",
+    "length": "13.0 m",
+    "width": "9.0 m",
+    "height": "4.5 m",
+    "weight": "5,300 kg (empty)",
+    "speed": "1,150 km/h",
+    "developer": "AMX International (Italy/France)",
+    "number_produced": 500,
+    "first_flight": "1984‑05‑15",
+    "physical_description": "Single-engine, light strike aircraft with high wing and conventional tail.",
+    "purpose_features": "Ground-attack and reconnaissance; operated by Italian and Brazilian air forces as well.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  }
+]
