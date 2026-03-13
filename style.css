@@ -37,3 +37,7 @@ input {
   color: #1e3a8a;
   font-weight: bold;
 }
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
