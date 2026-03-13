@@ -700,3 +700,35 @@
     "weapons": ["Gun","Missiles","Bombs"]
   }
 ]
+[
+  {
+    "name": "IAI Kfir C.1",
+    "country": "Israel",
+    "length": "14.8 m",
+    "width": "8.2 m",
+    "height": "4.7 m",
+    "weight": "8,500 kg (empty approx.)",
+    "speed": "Mach 2.3",
+    "developer": "Israel Aerospace Industries",
+    "number_produced": 90,
+    "first_flight": "1973‑05‑15",
+    "physical_description": "Delta wing single-engine fighter based on Mirage 5 with Israeli avionics and improvements.",
+    "purpose_features": "Multirole fighter for air superiority and ground attack; exported to several countries.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "IAI Kfir C.2 / C.7",
+    "country": "Israel",
+    "length": "14.8 m",
+    "width": "8.2 m",
+    "height": "4.7 m",
+    "weight": "8,500 kg (empty approx.)",
+    "speed": "Mach 2.3",
+    "developer": "Israel Aerospace Industries",
+    "number_produced": 120,
+    "first_flight": "1975‑07‑20",
+    "physical_description": "Upgraded Kfir variants with better avionics, engines, and multirole capability.",
+    "purpose_features": "Export and improved operational versions for Israel; capable in strike and interception roles.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  }
+]
