@@ -1,1 +1,35 @@
+/* Basic layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
 
+/* Search results */
+#results p {
+  cursor: pointer;
+  padding: 4px;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+}
+
+#results p:hover {
+  background-color: #f0f0f0;
+}
+
+/* Jet info section */
+#jetInfoSection {
+  padding: 10px;
+}
+
+/* Highlight matched letters */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/* Back button */
+#backButton {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
