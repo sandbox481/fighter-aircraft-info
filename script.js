@@ -6,11 +6,11 @@ const jets = [
   { name: 'F-35A', type: 'Fighter', weapons: ['Missiles', 'Gun'], speed: '1930 km/h', range: '2220 km' }
 ];
 
-// --- Search functionality ---
+// --- Only run search code if on index.html ---
 const searchInput = document.getElementById('searchInput');
 const resultsDiv = document.getElementById('results');
 
-if (searchInput) { // Only on index.html
+if (searchInput && resultsDiv) { 
   searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
     const filtered = jets.filter(j => j.name.toLowerCase().includes(query));
@@ -20,9 +20,9 @@ if (searchInput) { // Only on index.html
   });
 }
 
-// --- Jet info page ---
+// --- Only run jet info code if on jet.html ---
 const jetDetailsDiv = document.getElementById('jetDetails');
-if (jetDetailsDiv) { // Only on jet.html
+if (jetDetailsDiv) { 
   const urlParams = new URLSearchParams(window.location.search);
   const jetName = urlParams.get('name');
   const jet = jets.find(j => j.name === jetName);
@@ -39,3 +39,4 @@ if (jetDetailsDiv) { // Only on jet.html
     jetDetailsDiv.innerHTML = '<p>Jet not found</p>';
   }
 }
+  
