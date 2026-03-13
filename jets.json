@@ -653,3 +653,50 @@
     "weapons": ["Gun","Missiles","Bombs"]
   }
 ]
+[
+  {
+    "name": "MB.326GB",
+    "country": "Italy",
+    "length": "9.48 m",
+    "width": "10.0 m",
+    "height": "3.12 m",
+    "weight": "2,450 kg (empty)",
+    "speed": "828 km/h",
+    "developer": "Aermacchi",
+    "number_produced": 1_000,
+    "first_flight": "1957‑12‑10",
+    "physical_description": "Small, single-engine jet trainer with low wings and tandem cockpit.",
+    "purpose_features": "Trainer and light attack aircraft; used to train generations of military pilots.",
+    "weapons": ["Gun","Bombs"]
+  },
+  {
+    "name": "AMX International AMX",
+    "country": "Italy",
+    "length": "13.0 m",
+    "width": "9.0 m",
+    "height": "4.5 m",
+    "weight": "5,300 kg (empty)",
+    "speed": "1,150 km/h",
+    "developer": "AMX International (Italy/France)",
+    "number_produced": 500,
+    "first_flight": "1984‑05‑15",
+    "physical_description": "Single-engine, light strike aircraft with high wing and conventional tail.",
+    "purpose_features": "Ground-attack and reconnaissance; served in Italian Air Force and export countries.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  },
+  {
+    "name": "Panavia Tornado",
+    "country": "Italy",
+    "length": "16.72 m",
+    "width": "13.91 m",
+    "height": "5.95 m",
+    "weight": "13,500 kg (empty)",
+    "speed": "2,450 km/h",
+    "developer": "Panavia (UK/DE/IT consortium)",
+    "number_produced": 992,
+    "first_flight": "1974‑08‑14",
+    "physical_description": "Twin-engine variable-geometry wing multirole fighter-bomber.",
+    "purpose_features": "Strike, reconnaissance, and electronic warfare roles; operated by multiple NATO countries including Italy.",
+    "weapons": ["Gun","Missiles","Bombs"]
+  }
+]
