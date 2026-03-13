@@ -1,42 +1,70 @@
-// Temporary “database” of jets
-const jets = [
-  { name: 'F-16', type: 'Fighter', weapons: ['Missiles', 'Gun'], speed: '1500 km/h', range: '4220 km' },
-  { name: 'F-22', type: 'Fighter', weapons: ['Missiles', 'Gun'], speed: '2410 km/h', range: '2960 km' },
-  { name: 'A-10', type: 'Attack', weapons: ['Cannon', 'Missiles', 'Bombs'], speed: '706 km/h', range: '4170 km' },
-  { name: 'F-35A', type: 'Fighter', weapons: ['Missiles', 'Gun'], speed: '1930 km/h', range: '2220 km' }
-];
+// ----------------- ELEMENTS -----------------
+const searchBar = document.getElementById("searchBar");
+const resultsDiv = document.getElementById("results");
+const searchSection = document.getElementById("searchSection");
+const jetInfoSection = document.getElementById("jetInfoSection");
+const jetInfoDiv = document.getElementById("jetInfo");
+const backButton = document.getElementById("backButton");
 
-// --- Only run search code if on index.html ---
-const searchInput = document.getElementById('searchInput');
-const resultsDiv = document.getElementById('results');
+// ----------------- DATABASE -----------------
+// Keep your existing jets database array
+// Example: const jets = yourJetsArray;
+  
+// ----------------- SEARCH FUNCTION -----------------
+searchBar.addEventListener("input", () => {
+  const searchInput = searchBar.value.trim().toLowerCase().replace(/\s+/g, "");
 
-if (searchInput && resultsDiv) { 
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    const filtered = jets.filter(j => j.name.toLowerCase().includes(query));
-    resultsDiv.innerHTML = filtered.length > 0
-      ? filtered.map(j => `<div><a href="jet.html?name=${encodeURIComponent(j.name)}">${j.name}</a></div>`).join('')
-      : '<div>No jets found</div>';
+  const filteredJets = jets.filter(jet => {
+    const jetName = jet.name.toLowerCase().replace(/\s+/g, "");
+    return jetName.includes(searchInput);
   });
-}
 
-// --- Only run jet info code if on jet.html ---
-const jetDetailsDiv = document.getElementById('jetDetails');
-if (jetDetailsDiv) { 
-  const urlParams = new URLSearchParams(window.location.search);
-  const jetName = urlParams.get('name');
-  const jet = jets.find(j => j.name === jetName);
-
-  if (jet) {
-    jetDetailsDiv.innerHTML = `
-      <h1>${jet.name}</h1>
-      <p>Type: ${jet.type}</p>
-      <p>Weapons: ${jet.weapons.join(', ')}</p>
-      <p>Speed: ${jet.speed}</p>
-      <p>Range: ${jet.range}</p>
-    `;
+  if (filteredJets.length === 0) {
+    resultsDiv.innerHTML = "<p>No jets found</p>";
   } else {
-    jetDetailsDiv.innerHTML = '<p>Jet not found</p>';
+    resultsDiv.innerHTML = filteredJets
+      .map(j => `<p class="jetItem" data-name="${j.name}">${j.name} (${j.country})</p>`)
+      .join("");
   }
+
+  // ADD CLICK EVENTS TO RESULTS
+  document.querySelectorAll(".jetItem").forEach(item => {
+    item.addEventListener("click", () => {
+      showJetInfo(item.dataset.name);
+    });
+  });
+});
+
+// ----------------- SHOW JET INFO -----------------
+function showJetInfo(jetName) {
+  const jet = jets.find(j => j.name === jetName);
+  if (!jet) return;
+
+  // Hide search, show info
+  searchSection.style.display = "none";
+  jetInfoSection.style.display = "block";
+
+  // Display jet details
+  jetInfoDiv.innerHTML = `
+    <h2>${jet.name}</h2>
+    <p><strong>Country:</strong> ${jet.country}</p>
+    <p><strong>Length:</strong> ${jet.length}</p>
+    <p><strong>Wingspan:</strong> ${jet.width || jet.wingspan || "N/A"}</p>
+    <p><strong>Height:</strong> ${jet.height}</p>
+    <p><strong>Weight:</strong> ${jet.weight}</p>
+    <p><strong>Speed:</strong> ${jet.speed}</p>
+    <p><strong>Developer:</strong> ${jet.developer}</p>
+    <p><strong>First Flight:</strong> ${jet.first_flight}</p>
+    <p><strong>Number Produced:</strong> ${jet.number_produced}</p>
+    <p><strong>Description:</strong> ${jet.description}</p>
+    <p><strong>Purpose/Features:</strong> ${jet.purpose_features}</p>
+    <p><strong>Weapons:</strong> ${jet.weapons ? jet.weapons.join(", ") : "N/A"}</p>
+  `;
 }
+
+// ----------------- BACK BUTTON -----------------
+backButton.addEventListener("click", () => {
+  jetInfoSection.style.display = "none";
+  searchSection.style.display = "block";
+});
   
