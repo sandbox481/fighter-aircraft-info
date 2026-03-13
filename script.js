@@ -22,9 +22,22 @@ searchBar.addEventListener("input", () => {
   if (filteredJets.length === 0) {
     resultsDiv.innerHTML = "<p>No jets found</p>";
   } else {
-    resultsDiv.innerHTML = filteredJets
-      .map(j => `<p class="jetItem" data-name="${j.name}">${j.name} (${j.country})</p>`)
-      .join("");
+ resultsDiv.innerHTML = filteredJets
+  .map(jet => {
+    const jetNameClean = jet.name.toLowerCase().replace(/\s+/g, "");
+    const inputClean = searchInput;
+
+    let displayName = jet.name;
+
+    if (inputClean) {
+      // Highlight matching letters
+      const regex = new RegExp(`(${searchInput})`, "ig");
+      displayName = jet.name.replace(regex, `<span class="highlight">$1</span>`);
+    }
+
+    return `<p class="jetItem" data-name="${jet.name}">${displayName} (${jet.country})</p>`;
+  })
+  .join("");  }
   }
 
   // ADD CLICK EVENTS TO RESULTS
