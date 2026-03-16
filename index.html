@@ -52,7 +52,636 @@ text-align:left;
 <div id="jetPage"></div>
 
 <script>
+const jets = [
 
+{
+name:"J-20",
+developer:"Chengdu Aerospace Corporation",
+length:"21.2 m",
+wingspan:"13.01 m",
+height:"4.69 m",
+speed:"Mach 2.0",
+weapons:"PL-15, PL-10, internal bay missiles",
+info:"Chinese stealth multirole fighter."
+},
+
+{
+name:"J-10",
+developer:"Chengdu Aircraft Industry Group",
+length:"16.9 m",
+wingspan:"9.75 m",
+height:"5.4 m",
+speed:"Mach 2.2",
+weapons:"PL-12, PL-10, bombs, rockets",
+info:"Chinese multirole fighter."
+},
+
+{
+name:"J-11",
+developer:"Shenyang Aircraft Corporation",
+length:"21.9 m",
+wingspan:"14.5 m",
+height:"5.9 m",
+speed:"Mach 2.35",
+weapons:"R-27, R-73 missiles, cannon",
+info:"Chinese variant of Su-27."
+},
+
+{
+name:"J-15",
+developer:"Shenyang Aircraft Corporation",
+length:"21.9 m",
+wingspan:"14.08 m",
+height:"6.5 m",
+speed:"Mach 2.05",
+weapons:"R-27, R-73 missiles, bombs",
+info:"Chinese carrier-based fighter."
+},
+
+{
+name:"J-35 Draken",
+developer:"Saab",
+length:"15.35 m",
+wingspan:"9.42 m",
+height:"4.5 m",
+speed:"Mach 2.1",
+weapons:"R-550 Magic, Rb 24 missiles, cannon",
+info:"Swedish fighter jet."
+},
+
+{
+name:"F-4 Phantom",
+developer:"McDonnell Douglas",
+length:"19.2 m",
+wingspan:"11.7 m",
+height:"5.0 m",
+speed:"Mach 2.23+",
+weapons:"AIM-7 Sparrow, AIM-9 Sidewinder, bombs, M61 cannon",
+info:"U.S. multirole jet used in Vietnam War."
+},
+
+{
+name:"F-101",
+developer:"McDonnell Aircraft",
+length:"16.34 m",
+wingspan:"11.18 m",
+height:"4.12 m",
+speed:"Mach 1.72",
+weapons:"Air-to-air missiles",
+info:"Early Cold War U.S. interceptor/fighter."
+},
+
+{
+name:"F-14",
+developer:"Grumman",
+length:"19.1 m",
+wingspan:"19.55 m (swept)",
+height:"4.88 m",
+speed:"Mach 2.34",
+weapons:"AIM-54 Phoenix, AIM-7 Sparrow, AIM-9 Sidewinder, M61 cannon",
+info:"U.S. carrier fighter, variable sweep wings."
+},
+
+{
+name:"F-15",
+developer:"McDonnell Douglas / Boeing",
+length:"19.43 m",
+wingspan:"13.05 m",
+height:"5.63 m",
+speed:"Mach 2.5",
+weapons:"AIM-7 Sparrow, AIM-120 AMRAAM, M61 cannon, bombs",
+info:"U.S. air superiority fighter."
+},
+
+{
+name:"F-16",
+developer:"General Dynamics / Lockheed Martin",
+length:"15.06 m",
+wingspan:"9.96 m",
+height:"4.88 m",
+speed:"Mach 2.0",
+weapons:"M61 cannon, AIM-9 Sidewinder, AIM-120 AMRAAM, bombs",
+info:"U.S. multirole fighter."
+},
+
+{
+name:"F-17",
+developer:"N/A",
+length:"N/A",
+wingspan:"N/A",
+height:"N/A",
+speed:"N/A",
+weapons:"Missiles, Gun",
+info:"Prototype / experimental fighter."
+},
+
+{
+name:"F-18",
+developer:"McDonnell Douglas / Boeing",
+length:"17.07 m",
+wingspan:"12.3 m",
+height:"4.66 m",
+speed:"Mach 1.8",
+weapons:"M61A1 cannon, AIM-9 Sidewinder, AIM-120 AMRAAM, bombs, rockets",
+info:"U.S. multirole carrier fighter."
+},
+
+{
+name:"F-18 Super Hornet",
+developer:"Boeing",
+length:"18.31 m",
+wingspan:"13.62 m",
+height:"4.88 m",
+speed:"Mach 1.8",
+weapons:"M61A2 cannon, AIM-9 Sidewinder, AIM-120 AMRAAM, Harpoon, AGM-65, JSOW, JDAM",
+info:"Larger, upgraded multirole carrier fighter."
+},
+
+{
+name:"F-22",
+developer:"Lockheed Martin",
+length:"18.9 m",
+wingspan:"13.56 m",
+height:"5.09 m",
+speed:"Mach 2.25",
+weapons:"AIM-120 AMRAAM, AIM-9 Sidewinder",
+info:"Stealth air superiority fighter."
+},
+
+{
+name:"F-35A",
+developer:"Lockheed Martin",
+length:"15.67 m",
+wingspan:"10.7 m",
+height:"4.38 m",
+speed:"Mach 1.6+",
+weapons:"Internal bay missiles & bombs",
+info:"CTOL stealth multirole fighter."
+},
+
+{
+name:"F-35B",
+developer:"Lockheed Martin",
+length:"15.61 m",
+wingspan:"10.7 m",
+height:"4.38 m",
+speed:"Mach 1.6+",
+weapons:"Internal bay missiles & bombs",
+info:"STOVL stealth multirole fighter."
+},
+
+{
+name:"F-35C",
+developer:"Lockheed Martin",
+length:"15.67 m",
+wingspan:"13.1 m",
+height:"4.7 m",
+speed:"Mach 1.6+",
+weapons:"Internal bay missiles & bombs",
+info:"Carrier variant stealth fighter."
+},
+
+{
+name:"F-117",
+developer:"Lockheed Martin",
+length:"20.8 m",
+wingspan:"13.2 m",
+height:"3.87 m",
+speed:"Mach 0.92",
+weapons:"Laser-guided bombs, JDAM",
+info:"Stealth attack aircraft."
+},
+
+{
+name:"F-111",
+developer:"General Dynamics",
+length:"19.2 m",
+wingspan:"13.49 m (variable)",
+height:"4.8 m",
+speed:"Mach 2.5",
+weapons:"Bombs, missiles",
+info:"Tactical bomber and strike aircraft."
+},
+
+{
+name:"YF-22",
+developer:"Lockheed Martin",
+length:"18.9 m",
+wingspan:"13.56 m",
+height:"5.09 m",
+speed:"Mach 2.25",
+weapons:"AIM-120 AMRAAM, AIM-9 Sidewinder",
+info:"Prototype for F-22."
+},
+
+{
+name:"YF-23",
+developer:"Northrop",
+length:"22.5 m",
+wingspan:"13.1 m",
+height:"4.9 m",
+speed:"Mach 2.0+",
+weapons:"Internal bay missiles",
+info:"Prototype stealth fighter, competitor to F-22."
+},
+
+{
+name:"MiG-15",
+developer:"Mikoyan-Gurevich",
+length:"10.1 m",
+wingspan:"10.1 m",
+height:"3.7 m",
+speed:"Mach 0.92",
+weapons:"37mm/23mm cannons, rockets",
+info:"Early Soviet jet fighter."
+},
+
+{
+name:"MiG-17",
+developer:"Mikoyan-Gurevich",
+length:"10.6 m",
+wingspan:"9.63 m",
+height:"3.7 m",
+speed:"Mach 0.93",
+weapons:"Cannon, rockets, bombs",
+info:"Soviet fighter used in Vietnam War."
+},
+
+{
+name:"MiG-19",
+developer:"Mikoyan",
+length:"12.6 m",
+wingspan:"9.0 m",
+height:"3.95 m",
+speed:"Mach 1.35",
+weapons:"Cannon, air-to-air missiles",
+info:"Soviet supersonic fighter."
+},
+
+{
+name:"MiG-21",
+developer:"Mikoyan",
+length:"15.76 m",
+wingspan:"7.15 m",
+height:"4.12 m",
+speed:"Mach 2.05",
+weapons:"GSh-23L cannon, missiles/bombs",
+info:"Soviet supersonic fighter/interceptor."
+},
+
+{
+name:"MiG-23",
+developer:"Mikoyan",
+length:"16.71 m",
+wingspan:"13.96 m",
+height:"4.82 m",
+speed:"Mach 2.35",
+weapons:"Cannon, R-23/R-24 missiles, bombs/rockets",
+info:"Soviet swing-wing fighter/interceptor."
+},
+
+{
+name:"MiG-25",
+developer:"Mikoyan",
+length:"23.82 m",
+wingspan:"15.0 m",
+height:"6.10 m",
+speed:"Mach 2.83",
+weapons:"AA-6 Acrid missiles (varies), recon sensor options",
+info:"High-speed interceptor/reconnaissance fighter."
+},
+
+{
+name:"MiG-29",
+developer:"Mikoyan",
+length:"17.32 m",
+wingspan:"11.36 m",
+height:"4.73 m",
+speed:"Mach 2.25",
+weapons:"Cannon, air-to-air missiles, bombs",
+info:"Soviet/Russian multirole fighter."
+},
+
+{
+name:"MiG-31",
+developer:"Mikoyan",
+length:"22.62 m",
+wingspan:"13.46 m",
+height:"6.46 m",
+speed:"Mach 2.83",
+weapons:"Cannon, long-range missiles",
+info:"Long-range interceptor evolved from MiG-25."
+},
+
+{
+name:"Su-7",
+developer:"Sukhoi",
+length:"16.72 m",
+wingspan:"9.73 m",
+height:"4.65 m",
+speed:"Mach 2.0",
+weapons:"Cannon, bombs, missiles",
+info:"Soviet fighter-bomber."
+},
+
+{
+name:"Su-17",
+developer:"Sukhoi",
+length:"19.43 m",
+wingspan:"10.36 m",
+height:"4.8 m",
+speed:"Mach 2.0",
+weapons:"Cannon, bombs, missiles",
+info:"Soviet fighter-bomber."
+},
+
+{
+name:"Su-20",
+developer:"Sukhoi",
+length:"19.43 m",
+wingspan:"10.36 m",
+height:"4.8 m",
+speed:"Mach 2.0",
+weapons:"Cannon, bombs, missiles",
+info:"Export variant of Su-17."
+},
+
+{
+name:"Su-22",
+developer:"Sukhoi",
+length:"19.43 m",
+wingspan:"10.36 m",
+height:"4.8 m",
+speed:"Mach 2.0",
+weapons:"Cannon, bombs, missiles",
+info:"Export variant of Su-17."
+},
+
+{
+name:"Su-24",
+developer:"Sukhoi",
+length:"22.65 m",
+wingspan:"17.63 m",
+height:"6.08 m",
+speed:"Mach 1.6",
+weapons:"Bombs, missiles, cannon",
+info:"Soviet strike aircraft."
+},
+
+{
+name:"Su-25",
+developer:"Sukhoi",
+length:"17.6 m",
+wingspan:"14.36 m",
+height:"4.8 m",
+speed:"Mach 0.82",
+weapons:"Cannon, rockets, bombs",
+info:"Russian close air support jet."
+},
+
+{
+name:"Su-27",
+developer:"Sukhoi",
+length:"21.9 m",
+wingspan:"14.7 m",
+height:"5.92 m",
+speed:"Mach 2.35",
+weapons:"GSh-30-1 cannon, R-27, R-73 missiles, bombs",
+info:"Russian air superiority fighter."
+},
+
+{
+name:"Su-30",
+developer:"Sukhoi",
+length:"21.94 m",
+wingspan:"14.7 m",
+height:"6.36 m",
+speed:"Mach 2.0",
+weapons:"GSh-30-1 cannon, R-27, R-73, R-77, Kh-31/Kh-29, bombs",
+info:"Russian twin-seat multirole fighter."
+},
+
+{
+name:"Su-33",
+developer:"Sukhoi",
+length:"22.0 m",
+wingspan:"14.7 m",
+height:"5.93 m",
+speed:"Mach 2.2",
+weapons:"GSh-30-1 cannon, R-27, R-73 missiles, bombs",
+info:"Russian carrier-based fighter."
+},
+
+{
+name:"Su-35",
+developer:"Sukhoi",
+length:"22.18 m",
+wingspan:"14.7 m",
+height:"6.43 m",
+speed:"Mach 2.25",
+weapons:"GSh-30-1 cannon, R-27, R-73, R-77 missiles, bombs",
+info:"Advanced Flanker-family multirole fighter."
+},
+
+{
+name:"Su-57",
+developer:"Sukhoi",
+length:"20.1 m",
+wingspan:"14.0 m",
+height:"4.7 m",
+speed:"Mach 2.0",
+weapons:"R-77, R-74 (internal bays), external possible",
+info:"Russian fifth-generation stealth multirole fighter."
+},
+
+{
+name:"Hawk 200",
+developer:"BAE Systems",
+length:"12.4 m",
+wingspan:"9.44 m",
+height:"3.85 m",
+speed:"Mach 1.2",
+weapons:"Gun, Missiles",
+info:"Light attack/trainer jet."
+},
+
+{
+name:"IAI Kfir",
+developer:"Israel Aerospace Industries",
+length:"14.8 m",
+wingspan:"8.22 m",
+height:"4.11 m",
+speed:"Mach 2.0",
+weapons:"AIM-9 Sidewinder, bombs, cannon",
+info:"Israeli multirole fighter."
+},
+
+{
+name:"IAI C1",
+developer:"Israel Aerospace Industries",
+length:"14.8 m",
+wingspan:"8.22 m",
+height:"4.11 m",
+speed:"Mach 2.0",
+weapons:"AIM-9 Sidewinder, bombs, cannon",
+info:"Israeli fighter."
+},
+
+{
+name:"AMX International AMX",
+developer:"Alenia Aermacchi / Embraer",
+length:"11.85 m",
+wingspan:"9.63 m",
+height:"4.33 m",
+speed:"Mach 0.92",
+weapons:"Missiles, bombs, cannon",
+info:"Italian-Brazilian attack jet."
+},
+
+{
+name:"M.B.326GB",
+developer:"Alenia Aermacchi",
+length:"9.46 m",
+wingspan:"9.46 m",
+height:"3.1 m",
+speed:"Mach 0.83",
+weapons:"Gun",
+info:"Italian jet trainer."
+},
+
+{
+name:"Dassault Mirage 3",
+developer:"Dassault Aviation",
+length:"15.0 m",
+wingspan:"8.22 m",
+height:"4.5 m",
+speed:"Mach 2.2",
+weapons:"Missiles, cannon",
+info:"French delta-wing fighter."
+},
+
+{
+name:"Dassault Mirage 5/50",
+developer:"Dassault Aviation",
+length:"15.3 m",
+wingspan:"8.22 m",
+height:"4.5 m",
+speed:"Mach 2.2",
+weapons:"Missiles, cannon",
+info:"Advanced Mirage 3 variant."
+},
+
+{
+name:"Dassault Mirage F1",
+developer:"Dassault Aviation",
+length:"15.3 m",
+wingspan:"8.4 m",
+height:"4.5 m",
+speed:"Mach 2.2",
+weapons:"Missiles, cannon",
+info:"French multirole fighter."
+},
+
+{
+name:"Dassault Mirage 2000",
+developer:"Dassault Aviation",
+length:"14.36 m",
+wingspan:"9.13 m",
+height:"5.2 m",
+speed:"Mach 2.2",
+weapons:"Missiles, cannon",
+info:"Modern French delta-wing fighter."
+},
+
+{
+name:"CF-105 Arrow",
+developer:"Avro Canada",
+length:"20.0 m",
+wingspan:"13.4 m",
+height:"4.7 m",
+speed:"Mach 2.0+",
+weapons:"Missiles, Gun",
+info:"Canadian delta-wing fighter — project cancelled."
+},
+
+{
+name:"P-80",
+developer:"Lockheed",
+length:"9.45 m",
+wingspan:"12.83 m",
+height:"3.0 m",
+speed:"Mach 0.85",
+weapons:"Gun",
+info:"Early U.S. jet fighter."
+},
+
+{
+name:"P-59B",
+developer:"Bell Aircraft",
+length:"10.2 m",
+wingspan:"11.6 m",
+height:"3.4 m",
+speed:"Mach 0.86",
+weapons:"Gun",
+info:"Early U.S. jet fighter."
+},
+
+{
+name:"Pavana Tornado",
+developer:"Panavia",
+length:"16.72 m",
+wingspan:"8.6 m",
+height:"4.4 m",
+speed:"Mach 2.2",
+weapons:"Missiles, bombs",
+info:"Strike fighter (Italy)."
+},
+
+{
+name:"Jaguar",
+developer:"SEPECAT",
+length:"16.7 m",
+wingspan:"8.75 m",
+height:"4.09 m",
+speed:"Mach 1.6",
+weapons:"Missiles, cannon",
+info:"Ground-attack jet."
+},
+
+{
+name:"Yak-28/Yak-38",
+developer:"N/A",
+length:"N/A",
+wingspan:"N/A",
+height:"N/A",
+speed:"N/A",
+weapons:"Missiles, Gun",
+info:"Soviet fighters — mixed roles (interceptor/attack)."
+},
+
+{
+name:"MF1",
+developer:"N/A",
+length:"N/A",
+wingspan:"N/A",
+height:"N/A",
+speed:"N/A",
+weapons:"Gun",
+info:"Experimental trainer jet."
+},
+
+{
+name:"MF2",
+developer:"N/A",
+length:"N/A",
+wingspan:"N/A",
+height:"N/A",
+speed:"N/A",
+weapons:"Gun",
+info:"Experimental trainer jet."
+}
+
+];
 
 
 function searchJets(){
