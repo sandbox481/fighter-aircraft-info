@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fighter Jet Database</title>
 
+<style>
+
+body{
+font-family:Arial;
+background:#0b0f1a;
+color:white;
+text-align:center;
+}
+
+input{
+width:320px;
+padding:10px;
+font-size:16px;
+margin-top:20px;
+}
+
+.result{
+background:#1b2338;
+margin:10px auto;
+padding:12px;
+width:320px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.result:hover{
+background:#2a3558;
+}
+
+#jetPage{
+display:none;
+padding:40px;
+}
+
+#homePage{
+padding-top:40px;
+}
+
+button{
+padding:10px 20px;
+margin-top:20px;
+cursor:pointer;
+}
+
+.info{
+max-width:600px;
+margin:auto;
+text-align:left;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="homePage">
+
+<h1>Fighter Jet Database</h1>
+
+<input id="search" placeholder="Search fighter jet..." oninput="searchJets()">
+
+<div id="results"></div>
+
+</div>
+
+
+<div id="jetPage">
+
+<div id="jetInfo" class="info"></div>
+
+<button onclick="goHome()">⬅ Back</button>
+
+</div>
+
+
+<script>
+
+const jets = [
+
+{
+id:"f22",
+name:"F-22 Raptor",
+developer:"Lockheed Martin / Boeing",
+country:"United States",
+role:"Air Superiority Fighter",
+
+length:"18.9 m",
+wingspan:"13.6 m",
+height:"5.1 m",
+
+topSpeed:"Mach 2.25",
+
+weapons:[
+"AIM-120 AMRAAM",
+"AIM-9 Sidewinder",
+"GBU-32 JDAM",
+"M61A2 20mm Cannon"
+],
+
+info:"A 5th generation stealth fighter designed for air dominance."
+},
+
+{
+id:"f35",
+name:"F-35 Lightning II",
+developer:"Lockheed Martin",
+country:"United States",
+role:"Multirole Stealth Fighter",
+
+length:"15.7 m",
+wingspan:"10.7 m",
+height:"4.38 m",
+
+topSpeed:"Mach 1.6",
+
+weapons:[
+"AIM-120 AMRAAM",
+"AIM-9X Sidewinder",
+"GBU-31 JDAM",
+"GAU-22/A 25mm Cannon"
+],
+
+info:"A 5th generation multirole stealth fighter used by many allied nations."
+},
+
+{
+id:"f16",
+name:"F-16 Fighting Falcon",
+developer:"General Dynamics",
+country:"United States",
+role:"Multirole Fighter",
+
+length:"15.06 m",
+wingspan:"9.96 m",
+height:"4.88 m",
+
+topSpeed:"Mach 2.05",
+
+weapons:[
+"AIM-120 AMRAAM",
+"AIM-9 Sidewinder",
+"AGM-65 Maverick",
+"M61A1 20mm Cannon"
+],
+
+info:"One of the most widely used fighter aircraft ever built."
+},
+
+{
+id:"j20",
+name:"J-20 Mighty Dragon",
+developer:"Chengdu Aerospace Corporation",
+country:"China",
+role:"Stealth Fighter",
+
+length:"20.4 m",
+wingspan:"13.5 m",
+height:"4.45 m",
+
+topSpeed:"Mach 2",
+
+weapons:[
+"PL-15 Air-to-Air Missile",
+"PL-10 Short Range Missile"
+],
+
+info:"China's first operational stealth fighter."
+}
+
+];
+
+
+function searchJets(){
+
+let input=document.getElementById("search").value.toLowerCase();
+let results=document.getElementById("results");
+
+results.innerHTML="";
+
+jets.forEach(jet=>{
+
+if(jet.name.toLowerCase().includes(input)){
+
+results.innerHTML+=`
+<div class="result" onclick="openJet('${jet.id}')">
+${jet.name}
+</div>
+`;
+
+}
+
+});
+
+}
+
+
+function openJet(id){
+
+let jet=jets.find(j=>j.id===id);
+
+document.getElementById("homePage").style.display="none";
+document.getElementById("jetPage").style.display="block";
+
+let weaponsHTML="";
+
+jet.weapons.forEach(w=>{
+weaponsHTML+=`<li>${w}</li>`;
+});
+
+document.getElementById("jetInfo").innerHTML=`
+
+<h1>${jet.name}</h1>
+
+<p><b>Developer:</b> ${jet.developer}</p>
+<p><b>Country:</b> ${jet.country}</p>
+<p><b>Role:</b> ${jet.role}</p>
+
+<h3>Dimensions</h3>
+
+<p><b>Length:</b> ${jet.length}</p>
+<p><b>Wingspan:</b> ${jet.wingspan}</p>
+<p><b>Height:</b> ${jet.height}</p>
+
+<p><b>Top Speed:</b> ${jet.topSpeed}</p>
+
+<h3>Weapons</h3>
+
+<ul>
+${weaponsHTML}
+</ul>
+
+<p>${jet.info}</p>
+
+`;
+
+}
+
+
+function goHome(){
+
+document.getElementById("jetPage").style.display="none";
+document.getElementById("homePage").style.display="block";
+
+}
+
+searchJets();
+
+</script>
+
+</body>
+</html>
