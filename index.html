@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jet Database</title>
 
+<style>
+body{
+font-family:Arial;
+background:#0b0f1a;
+color:white;
+text-align:center;
+}
+
+input{
+padding:10px;
+width:300px;
+font-size:16px;
+margin:20px;
+}
+
+.result{
+background:#1b2338;
+margin:10px auto;
+padding:10px;
+width:300px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.result:hover{
+background:#2a3558;
+}
+
+#jetPage{
+display:none;
+padding:40px;
+max-width:600px;
+margin:auto;
+text-align:left;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Fighter Jet Database</h1>
+
+<input id="search" placeholder="Search jet..." oninput="searchJets()">
+
+<div id="results"></div>
+
+<div id="jetPage"></div>
+
+<script>
+
+const jets=[
+
+{
+name:"F-22 Raptor",
+developer:"Lockheed Martin",
+length:"18.9 m",
+wingspan:"13.6 m",
+height:"5.1 m",
+speed:"Mach 2.25",
+weapons:"AIM-120, AIM-9, M61A2 Cannon"
+},
+
+{
+name:"F-35 Lightning II",
+developer:"Lockheed Martin",
+length:"15.7 m",
+wingspan:"10.7 m",
+height:"4.38 m",
+speed:"Mach 1.6",
+weapons:"AIM-120, AIM-9X, GAU-22 Cannon"
+},
+
+{
+name:"F-16 Fighting Falcon",
+developer:"General Dynamics",
+length:"15.06 m",
+wingspan:"9.96 m",
+height:"4.88 m",
+speed:"Mach 2.05",
+weapons:"AIM-120, AIM-9, AGM-65, M61 Cannon"
+}
+
+];
+
+
+function searchJets(){
+
+let text=document.getElementById("search").value.toLowerCase();
+let results=document.getElementById("results");
+
+results.innerHTML="";
+
+jets.forEach((jet,i)=>{
+
+if(jet.name.toLowerCase().includes(text)){
+
+results.innerHTML+=`
+<div class="result" onclick="showJet(${i})">
+${jet.name}
+</div>
+`;
+
+}
+
+});
+
+}
+
+
+function showJet(i){
+
+let jet=jets[i];
+
+document.getElementById("jetPage").style.display="block";
+
+document.getElementById("jetPage").innerHTML=`
+
+<h2>${jet.name}</h2>
+
+<p><b>Developer:</b> ${jet.developer}</p>
+
+<p><b>Length:</b> ${jet.length}</p>
+<p><b>Wingspan:</b> ${jet.wingspan}</p>
+<p><b>Height:</b> ${jet.height}</p>
+
+<p><b>Top Speed:</b> ${jet.speed}</p>
+
+<p><b>Weapons:</b> ${jet.weapons}</p>
+
+<button onclick="closeJet()">Back</button>
+
+`;
+
+}
+
+function closeJet(){
+document.getElementById("jetPage").style.display="none";
+}
+
+searchJets();
+
+</script>
+
+</body>
+</html>
